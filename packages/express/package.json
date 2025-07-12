@@ -28,14 +28,15 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@bull-board/api": "6.11.0",
-    "@bull-board/ui": "6.11.0",
+    "@bull-board/api": "github:Dhananjay-JSR/bull-board#release-api",
+    "@bull-board/ui": "github:Dhananjay-JSR/bull-board#release-ui",
     "ejs": "^3.1.10",
     "express": "^4.21.1 || ^5.0.0"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.5",
-    "@types/express": "^4.17.21 || ^5.0.0"
+    "@types/express": "^4.17.21 || ^5.0.0",
+    "typescript": "^5.8.3"
   },
   "publishConfig": {
     "access": "public"
