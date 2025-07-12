@@ -11,6 +11,7 @@ for branch in release-api release-ui release-express; do
     git commit --allow-empty -m "Initialize $branch as orphan branch with no history"
     git push origin $branch
     git checkout -
+    git reset --hard HEAD
   fi
 done
 
