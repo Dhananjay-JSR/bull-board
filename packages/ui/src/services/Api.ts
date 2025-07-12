@@ -37,6 +37,13 @@ export class Api {
     );
   }
 
+  public retryPartial(queueName: string, status: JobRetryStatus, count: number): Promise<{retriedCount: number}> {
+    return this.axios.post(
+      `/queues/${encodeURIComponent(queueName)}/retry-partial/${encodeURIComponent(status)}`,
+      { count }
+    );
+  }
+
   public promoteAll(queueName: string): Promise<void> {
     return this.axios.put(`/queues/${encodeURIComponent(queueName)}/promote`);
   }

@@ -78,6 +78,13 @@ export function useQueues(): Omit<QueuesState, 'updateQueues'> & { actions: Queu
       confirmQueueActions
     );
 
+  const retryPartial = (queueName: string, status: JobRetryStatus, count: number) =>
+    withConfirmAndUpdate(
+      () => api.retryPartial(queueName, status, count),
+      t('QUEUE.ACTIONS.CONFIRM.RETRY_PARTIAL', { status, count }),
+      confirmQueueActions
+    );
+
   const promoteAll = (queueName: string) =>
     withConfirmAndUpdate(
       () => api.promoteAll(queueName),
@@ -140,6 +147,7 @@ export function useQueues(): Omit<QueuesState, 'updateQueues'> & { actions: Queu
       updateQueues,
       pollQueues,
       retryAll,
+      retryPartial,
       promoteAll,
       cleanAll,
       pauseQueue,

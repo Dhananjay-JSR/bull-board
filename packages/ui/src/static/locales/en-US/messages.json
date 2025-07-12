@@ -68,6 +68,7 @@
     "ACTIONS": {
       "MODAL_TITLE": "",
       "RETRY_ALL": "Retry all",
+      "RETRY_PARTIAL_LABEL": "Retry Partial",
       "PROMOTE_ALL": "Promote all",
       "CLEAN_ALL": "Clean all",
       "RESUME": "Resume",
@@ -76,8 +77,20 @@
       "PAUSE_ALL": "Pause all",
       "EMPTY": "Empty",
       "ADD_JOB": "Add job",
+      "RETRY_PARTIAL": {
+        "TITLE": "Retry Jobs",
+        "COUNT_LABEL": "Number of jobs to retry",
+        "DESCRIPTION": "Enter the number of {{status}} jobs to retry from {{queue}}. Max Limit: {{max}}",
+        "CANCEL": "Cancel",
+        "RETRY": "Retry Jobs",
+        "RETRYING": "Retrying...",
+        "SUCCESS": "Successfully retried {{count}} jobs",
+        "ERROR": "Failed to retry jobs",
+        "INVALID_COUNT": "Please enter a valid number greater than 0"
+      },
       "CONFIRM": {
         "RETRY_ALL": "Are you sure that you want to retry all {{status}} jobs?",
+        "RETRY_PARTIAL": "Are you sure that you want to retry {{count}} {{status}} jobs?",
         "CLEAN_ALL": "Are you sure that you want to clean all {{status}} jobs?",
         "PROMOTE_ALL": "Are you sure that you want to promote all delayed jobs?",
         "PAUSE_QUEUE": "Are you sure that you want to pause queue processing?",

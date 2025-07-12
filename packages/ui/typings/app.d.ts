@@ -14,6 +14,7 @@ export interface QueueActions {
   pauseAll: () => Promise<void>;
   resumeAll: () => Promise<void>;
   retryAll: (queueName: string, status: JobRetryStatus) => () => Promise<void>;
+  retryPartial: (queueName: string, status: JobRetryStatus, count: number) => () => Promise<void>;
   promoteAll: (queueName: string) => () => Promise<void>;
   cleanAll: (queueName: string, status: JobCleanStatus) => () => Promise<void>;
   pauseQueue: (queueName: string) => () => Promise<void>;
