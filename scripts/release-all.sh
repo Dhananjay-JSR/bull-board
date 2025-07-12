@@ -8,6 +8,7 @@ for branch in release-api release-ui release-express; do
     git checkout --orphan $branch
     # Remove all files except .git to ensure the branch is empty
     find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+    git commit --allow-empty -m "Initialize $branch as empty orphan branch"
     # Do not make any commit, push the empty orphan branch
     git push origin $branch
     git checkout -
