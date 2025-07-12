@@ -6,9 +6,9 @@ for branch in release-api release-ui release-express; do
   if ! git show-ref --quiet refs/heads/$branch && ! git ls-remote --exit-code --heads origin $branch > /dev/null; then
     git checkout master
     git checkout --orphan $branch
-    # Remove all files except .git
+    # Remove all files except .git to ensure the branch is empty
     find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-    git commit --allow-empty -m "Initialize $branch as orphan branch with no history"
+    # Do not make any commit, push the empty orphan branch
     git push origin $branch
     git checkout -
     git reset --hard HEAD
