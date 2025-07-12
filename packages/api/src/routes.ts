@@ -17,6 +17,7 @@ import { promoteAllHandler } from './handlers/promoteAll';
 import { updateJobDataHandler } from './handlers/updateJobData';
 import { pauseAllHandler } from './handlers/pauseAll';
 import { resumeAllHandler } from './handlers/resumeAll';
+import { retryPartialHandler } from './handlers/retryPartial';
 
 export const appRoutes: AppRouteDefs = {
   entryPoint: {
@@ -48,6 +49,11 @@ export const appRoutes: AppRouteDefs = {
       method: 'put',
       route: '/api/queues/:queueName/retry/:queueStatus',
       handler: retryAllHandler,
+    },
+    {
+      method: 'post',
+      route: '/api/queues/:queueName/retry-partial/:queueStatus',
+      handler: retryPartialHandler,
     },
     {
       method: 'put',
