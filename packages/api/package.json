@@ -2,19 +2,6 @@
   "name": "@bull-board/api",
   "version": "6.11.0",
   "description": "A Dashboard server API built on top of bull or bullmq.",
-  "keywords": [
-    "bull",
-    "bullmq",
-    "redis",
-    "queue",
-    "monitoring",
-    "dashboard"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/felixmosh/bull-board.git",
-    "directory": "packages/api"
-  },
   "license": "MIT",
   "author": "felixmosh",
   "main": "dist/src/index.js",
