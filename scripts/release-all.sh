@@ -19,22 +19,13 @@ done
 
 chmod +x scripts/release-api.sh scripts/release-ui.sh scripts/release-express.sh
 
-# Remove yarn.lock and node_modules before running release-api.sh
-rm -f yarn.lock
-rm -rf node_modules
-yarn install
+cd packages/api && yarn install && yarn build && cd ../..
 ./scripts/release-api.sh
 
-# Remove yarn.lock and node_modules before running release-ui.sh
-rm -f yarn.lock
-rm -rf node_modules
-yarn install
+cd packages/ui && yarn install && yarn build && cd ../..
 ./scripts/release-ui.sh
 
-# Remove yarn.lock and node_modules before running release-express.sh
-rm -f yarn.lock
-rm -rf node_modules
-yarn install
+cd packages/express && yarn install && yarn build && cd ../..
 ./scripts/release-express.sh 
 
 echo "Bull Board Packages Updated 🎉 🎉 🎉" 
