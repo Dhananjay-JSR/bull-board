@@ -1,0 +1,15 @@
+{
+  "name": "@bull-board/api",
+  "version": "0.0.0",
+  "description": "Bull Board api package",
+  "main": "index.js",
+  "files": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dhananjay-JSR/bull-board.git",
+    "directory": "packages/api"
+  },
+  "keywords": ["bull-board", "api"],
+  "author": "Dhananjay-JSR<ajaysenday@gmail.com>",
+  "license": "MIT"
+}
