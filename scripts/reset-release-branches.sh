@@ -32,8 +32,28 @@ for branch in "${RELEASE_BRANCHES[@]}"; do
   # Remove all files from the working directory
   git rm -rf . || true
   
-  # Create an empty commit to establish the branch
-  git commit --allow-empty -m "Initial empty commit for $branch"
+  # Create a basic package.json for the branch
+  cat > package.json << EOF
+{
+  "name": "@bull-board/${branch#release-}",
+  "version": "0.0.0",
+  "description": "Bull Board ${branch#release-} package",
+  "main": "index.js",
+  "files": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dhananjay-JSR/bull-board.git",
+    "directory": "packages/${branch#release-}"
+  },
+  "keywords": ["bull-board", "${branch#release-}"],
+  "author": "Dhananjay-JSR<ajaysenday@gmail.com>",
+  "license": "MIT"
+}
+EOF
+  
+  # Add and commit the package.json
+  git add package.json
+  git commit -m "Initial commit for $branch with package.json"
   
   # Push the new branch to remote
   git push origin $branch
